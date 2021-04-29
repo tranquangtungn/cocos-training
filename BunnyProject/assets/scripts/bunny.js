@@ -72,7 +72,7 @@ cc.Class({
     talk(dt) {
         this._timeToTalk += dt;
         if (this._timeToTalk >= 1) {
-            cc.log("hello")
+            cc.log("hello im a bunny")
             this._timeToTalk = 0;
         }
     },
