@@ -11,41 +11,57 @@
 cc.Class({
     extends: cc.Component,
     ctor() {
-        this.jumpTime = 1;
-        this.idleTime = 0;
-        this._width = 50;
-        this._height = 50;
-        this._frame = 0;
+        this._jumpTime = 1;
+        this._idleTime = 0;
+        this._jumpRange = 5;
+        this._timer = 0.0;
+        this._firstPos;
     },
     properties: {
-        width: {
+
+        objName: {
+            default: "bunny",
+        },
+        jumpRange: {
             get: function () {
-                return this._width;
+                return this._jumpRange;
             },
             set: function (value) {
-                this._width = value;
+                this._jumpRange = value;
             }
         },
-        height: {
+        jumpTime: {
             get: function () {
-                return this._height;
+                return this._jumpTime;
             },
             set: function (value) {
-                this._height = value;
+                this._jumpTime = value;
+            }
+        },
+        idleTime: {
+            get: function () {
+                return this._idleTime;
+            },
+            set: function (value) {
+                this._idleTime = value;
             }
         },
 
     },
-    jump(jumpTime, idleTime) {
-        this._frame++;
-        let jumpFrames = 60 * jumpTime;
-        let idleFrames = 60 * idleTime;
-        if (this._frame <= jumpFrames / 2 && this._frame > 0)
-            this.node.y += 5;
-        else if (this._frame <= jumpFrames)
-            this.node.y -= 5;
-        else if (this._frame === jumpFrames + idleFrames)
-            this._frame = 0;
+    jump(dt) {
+        this._timer += dt;
+
+        if (this._timer <= this._jumpTime / 2)
+            this.node.y += this._jumpRange;
+        else if (this._timer <= this._jumpTime)
+            this.node.y -= this._jumpRange;
+        else {
+            this.node.y = this._firstPos;
+            cc.log(this.node.y)
+        }
+        if (this._timer >= this._jumpTime + this._idleTime)
+            this._timer = 0;
+
 
     },
 
@@ -54,11 +70,11 @@ cc.Class({
     // onLoad () {},
 
     start() {
-
+        this._firstPos = this.node.y;
     },
 
     update(dt) {
 
-        this.jump(1, 1)
+        this.jump(dt)
     },
 });

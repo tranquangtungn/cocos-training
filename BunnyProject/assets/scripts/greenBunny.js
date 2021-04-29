@@ -10,7 +10,13 @@
 var bunny = require("bunny")
 cc.Class({
     extends: bunny,
+    ctor() {
+        this._jumpTime = 1;
+        this._idleTime = 1;
 
+        this._timer = 0.0;
+        this._firstPos;
+    },
     properties: {
         // foo: {
         //     // ATTRIBUTES:
@@ -28,16 +34,21 @@ cc.Class({
         //     }
         // },
     },
-    jump(jumpTime, idleTime) {
-        this._frame++;
-        let jumpFrames = 60 * jumpTime;
-        let idleFrames = 60 * idleTime;
-        if (this._frame <= jumpFrames / 2 && this._frame > 0)
-            this.node.scale += 0.5 / (jumpFrames / 2);
-        else if (this._frame <= jumpFrames)
-            this.node.scale -= 1 / (jumpFrames / 2);
-        else if (this._frame === jumpFrames + idleFrames) {
-            this._frame = 0;
+    jump(dt) {
+        this._timer += dt;
+
+        if (this._timer <= this._jumpTime / 2) {
+            this.node.scaleX += 1 / (1 / dt);
+            //cc.log(this.node.scaleX)
+        }
+        else if (this._timer <= this._jumpTime) {
+            this.node.scaleX -= 2 / (1 / dt);
+        }
+        else {
+            this.node.scaleX = 0.5;
+        }
+        if (this._timer >= this._jumpTime + this._idleTime) {
+            this._timer = 0;
             this.node.scale = 1;
         }
 

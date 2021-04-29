@@ -28,16 +28,23 @@ cc.Class({
         //     }
         // },
     },
-    jump(jumpTime, idleTime) {
-        this._frame++;
-        let jumpFrames = 60 * jumpTime;
-        let idleFrames = 60 * idleTime;
-        if (this._frame <= jumpFrames / 2 && this._frame > 0)
-            this.node.y += 5;
-        else if (this._frame <= jumpFrames)
-            this.node.y -= 5;
-        else if (this._frame === jumpFrames + idleFrames)
-            this._frame = 0;
+    jump(dt) {
+        this._timer += dt;
+
+        if (this._timer <= 1.0) {
+            this.node.skewX += 60 / (1 / dt);
+            //this.node.x += 100 / (1 / dt);
+            //         cc.log(this.node.x)
+        }
+        else if (this._timer <= 1.5) {
+            this.node.skewX -= 60 / (1 / dt);
+
+            //this.node.x -= 100 / (1 / dt);
+        }
+        if (this._timer >= 2.5) {
+            this._timer = 0;
+            this.node.skewX = -30;
+        }
 
     },
     // LIFE-CYCLE CALLBACKS:
