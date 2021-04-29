@@ -15,6 +15,7 @@ cc.Class({
         this._idleTime = 0;
         this._jumpRange = 5;
         this._timer = 0.0;
+        this._timeToTalk = 0.0;
         this._firstPos;
     },
     properties: {
@@ -57,7 +58,7 @@ cc.Class({
             this.node.y -= this._jumpRange;
         else {
             this.node.y = this._firstPos;
-            cc.log(this.node.y)
+
         }
         if (this._timer >= this._jumpTime + this._idleTime)
             this._timer = 0;
@@ -68,6 +69,13 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
+    talk(dt) {
+        this._timeToTalk += dt;
+        if (this._timeToTalk >= 1) {
+            cc.log("hello")
+            this._timeToTalk = 0;
+        }
+    },
 
     start() {
         this._firstPos = this.node.y;
@@ -76,5 +84,6 @@ cc.Class({
     update(dt) {
 
         this.jump(dt)
+        this.talk(dt)
     },
 });

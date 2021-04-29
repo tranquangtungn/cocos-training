@@ -31,7 +31,7 @@ cc.Class({
             redBunny.parent = this.node;
             redBunny.x = -400 + 100 * (i + 1)
             redBunny.y = -200;
-            cc.log(redBunny.x)
+
         }
     },
 

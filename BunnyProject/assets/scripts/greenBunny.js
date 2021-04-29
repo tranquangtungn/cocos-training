@@ -62,6 +62,10 @@ cc.Class({
     start() {
 
     },
+    update(dt) {
 
+        this.jump(dt)
+
+    },
     // update (dt) {},
 });

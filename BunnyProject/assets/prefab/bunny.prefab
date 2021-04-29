@@ -74,7 +74,7 @@
   },
   {
     "__type__": "cc.Sprite",
-    "_name": "",
+    "_name": "bunny<Sprite>",
     "_objFlags": 0,
     "node": {
       "__id__": 1
@@ -123,7 +123,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "cd7d9631-07fa-4cf5-8671-1bccdc8c5e15"
     },
     "fileId": "5fcuSB2IxD/LJ/OHLxS3y+",
     "sync": false
