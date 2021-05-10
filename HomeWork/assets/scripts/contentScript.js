@@ -1,32 +1,37 @@
-
+const mEmitter = require("./EventEmitter");
+const evt = require("./configEvtEmitter")
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        itemprefab: cc.Prefab
+        itemprefab: cc.Prefab,
     },
 
-    // LIFE-CYCLE CALLBACKS:
-
     onLoad() {
-        for (let i = 0; i < 5; i++) {
-            let item = cc.instantiate(this.itemprefab)
-            item.parent = this.node;
-            item.y = -80
-            item.y -= 80 * i
-            cc.log(item.y)
-            let richtext = item.getComponent(cc.RichText)
-            // cc.log(richtext.string)
-            richtext.string = `<color=black>Chào mừng </c><color=red><u></c><color=black>
-        đã gia nhập<color=yellow><i></color><color=black> `
-        }
-
-
+        let _addItemEvt = this.addItem.bind(this)
+        mEmitter.instance = new mEmitter();
+        mEmitter.instance.registerEvent(evt.addItem, _addItemEvt)
     },
 
     start() {
 
     },
-
+    addItem(data) {
+        let item = cc.instantiate(this.itemprefab)
+        item.parent = this.node;
+        item.height = 40;
+        item.x = 0
+        item.y = 0
+        item.y -= item.height * this.node.childrenCount
+        let richtext = item.getComponent(cc.RichText)
+        this.node.height = -item.y + item.height
+        richtext.fontSize = 30;
+        richtext.fontHeight = 30;
+        richtext.string = `<color=red><u>${data}</c> `;
+        mEmitter.instance.emit(evt.updateTarget, this.node.childrenCount)
+        if (this.node.children.length === 8) {
+            mEmitter.instance.detroy();
+        }
+    }
     // update (dt) {},
 });
