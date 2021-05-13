@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>Empty-Gold-Coin-Transparent.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{718,698},{210,211}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{45,14},{210,211}}</string>
+				<key>sourceSize</key>
+				<string>{300,240}</string>
+			</dict>
+
+			<key>PikPng.com_mario-coin-png_775841.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1344,512},{320,362}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{320,362}}</string>
+				<key>sourceSize</key>
+				<string>{320,362}</string>
+			</dict>
+
+			<key>clipart4350483.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1344,0},{511,511}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{1,1},{511,511}}</string>
+				<key>sourceSize</key>
+				<string>{512,512}</string>
+			</dict>
+
+			<key>kisspng-gold-coin-clip-art-gold-coins-5a9d5dbfcb8da0.7456160515202625918338 (1).png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,698},{408,269}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{51,143},{408,269}}</string>
+				<key>sourceSize</key>
+				<string>{500,500}</string>
+			</dict>
+
+			<key>kisspng-gold-coin-clip-art-gold-coins-5a9d5dbfcb8da0.7456160515202625918338.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,698},{408,269}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{51,143},{408,269}}</string>
+				<key>sourceSize</key>
+				<string>{500,500}</string>
+			</dict>
+
+			<key>kisspng-gold-coin-clip-art-vector-gold-gold-png-picture-5a9a8da240be26.9607440915200782422652.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{1343,697}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{6,5},{1343,697}}</string>
+				<key>sourceSize</key>
+				<string>{1355,708}</string>
+			</dict>
+
+			<key>kisspng-gold-coin-download-computer-file-gold-trophy-5a968ded29ae60.8819148015198161731707.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{409,698},{308,186}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{4,7},{308,186}}</string>
+				<key>sourceSize</key>
+				<string>{320,195}</string>
+			</dict>
+
+		</dict>
+
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>size</key>
+			<string>{2048,1024}</string>
+			<key>textureFileName</key>
+			<string>coin.png</string>
+			</dict>
+		</dict>
+</plist>
